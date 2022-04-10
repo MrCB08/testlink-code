@@ -303,10 +303,10 @@ function string_insert_hrefs( $p_string ) {
 	}
 
 	# Find any URL in a string and replace it by a clickable link
-	$t_function = create_function( '$p_match', '
-		$t_url_href = \'href="\' . rtrim( $p_match[1], \'.\' ) . \'"\';
-		return "<a ${t_url_href}>${p_match[1]}</a> [<a ${t_url_href} target=\"_blank\">^</a>]";
-	' );
+	$t_function = function($p_match) {
+		$t_url_href = 'href="' . rtrim( $p_match[1], '.' ) . '"';
+		return "<a ${t_url_href}>${p_match[1]}</a> [<a ${t_url_href} target=\"_blank\">^</a>]"; 
+	};
 	$p_string = preg_replace_callback( $s_url_regex, $t_function, $p_string );
 	if( $t_change_quotes ) {
 		ini_set( 'magic_quotes_sybase', true );
