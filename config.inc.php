@@ -2006,10 +2006,10 @@ $tlCfg->auth_cookie = $tlCfg->cookie->prefix .
                       "TESTLINK_USER_AUTH_COOKIE";
 
 /** 
-Used when creating a Test Suite using copy
-and you have choose  $g_action_on_duplicate_name = 'generate_new'
-if the name exist.
-*/
+ * Used when creating a Test Suite using copy
+ * and you have choose  $g_action_on_duplicate_name = 'generate_new'
+ * if the name exist.
+ */
 $g_prefix_name_for_copy = date("Ymd-H:i:s", time());
 
 
